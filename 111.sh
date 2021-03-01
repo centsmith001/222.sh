@@ -12,7 +12,7 @@ function openvpn (){
     sysctl -p
     #make directories
     mkdir /etc/openvpn/client/
-    
+    mkdir /etc/openvpn/easy-rsa/keys
     #install openvpn
     apt-get install openvpn -y
     cp -r usr/share/easy-rsa /etc/openvpn/
