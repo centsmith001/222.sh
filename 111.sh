@@ -188,7 +188,7 @@ EOF3
 #singin client key
     ./easyrsa sign-req client client
 #configure openvn server
-cat <<EOF4>> /etc/openvpn/server.conf
+cat <<EOF4> /etc/openvpn/server.conf
 port $openvpn_port
 proto tcp
 dev tun
@@ -221,7 +221,7 @@ EOF4
 systemctl start openvpn@server
 systemctl enable openvpn@server
 #generate client configurstion
-cat <<EOF5>> /etc/openvpn/client/client.ovpn
+cat <<EOF5> /etc/openvpn/client/client.ovpn
 client
 dev tun
 proto tcp
