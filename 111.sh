@@ -1,9 +1,9 @@
 #!/bin/bash
 apt-get update && apt-get upgrade -y
+openvpn_port = '110'
 function privoxy (){
     apt-get install privoxy -y
-    
-}
+    }
 privoxy
 function openvpn (){
     #removing openvpn files
@@ -17,7 +17,7 @@ function openvpn (){
     apt-get install openvpn -y
     cp -r usr/share/easy-rsa /etc/openvpn/
     #ca.crt here
-    cat <<EOF1>> /etc/openvpn/easy-rsa/keys/ca.crt
+    cat <<EOF1> /etc/openvpn/easy-rsa/keys/ca.crt
 #or /usr/share/doc/openvpn/examples/sample-keys/ca.crt
     -----BEGIN CERTIFICATE-----
 MIIE6DCCA9CgAwIBAgIJAISjqDk245utMA0GCSqGSIb3DQEBCwUAMIGoMQswCQYD
@@ -50,7 +50,7 @@ LIBsEs5oIQrq435Y
 ....-----END CERTIFICATE-----
 EOF1
 #server.crt HERE
-cat <<EOF2>> /etc/openvpn/server.crt #or /etc/openvpn/easy-rsa/keys/server.crt #or /usr/share/doc/openvpn/examples/sample-keys/server.crt
+cat <<EOF2> /etc/openvpn/server.crt #or /etc/openvpn/easy-rsa/keys/server.crt #or /usr/share/doc/openvpn/examples/sample-keys/server.crt
 Certificate:
     Data:
         Version: 3 (0x2)
